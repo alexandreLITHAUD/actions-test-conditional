@@ -78,6 +78,13 @@ jobs:
         run: ls
       - name: Deploy
         run: echo "Deploying..."
+  another-deploy:
+    needs: deploy
+    uses: ./.github/worflows/reusable.yml
+    with:
+      artifact-name: dist-files
+    #secrets:
+    #   some-secret: ${{ secrets.some-secret }}
   dummy: # Pas bon car il part en premier en parallel
     runs-on: ubuntu-latest
     needs: [lint, deploy] # mieux
