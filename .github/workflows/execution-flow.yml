@@ -80,7 +80,7 @@ jobs:
         run: echo "Deploying..."
   another-deploy:
     needs: deploy
-    uses: .github/workflows/reusable.yml@main
+    uses: ./.github/workflows/reusable.yml@main
     with:
       artifact-name: dist-files
     #secrets:
